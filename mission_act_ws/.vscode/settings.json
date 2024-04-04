@@ -1,0 +1,20 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/yusuf/mission_act_ws/src/mission_act/mission_act",
+        "/home/yusuf/actions_ws/install/action_py_codes/lib/python3.10/site-packages",
+        "/home/yusuf/actions_ws/install/action_tasks/local/lib/python3.10/dist-packages",
+        "/home/yusuf/mission_ws/install/mission_pkg/lib/python3.10/site-packages",
+        "/home/yusuf/pub_sub_ws/install/contact_package/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/yusuf/mission_act_ws/src/mission_act/mission_act",
+        "/home/yusuf/actions_ws/install/action_py_codes/lib/python3.10/site-packages",
+        "/home/yusuf/actions_ws/install/action_tasks/local/lib/python3.10/dist-packages",
+        "/home/yusuf/mission_ws/install/mission_pkg/lib/python3.10/site-packages",
+        "/home/yusuf/pub_sub_ws/install/contact_package/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}

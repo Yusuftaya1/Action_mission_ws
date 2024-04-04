@@ -1,0 +1,24 @@
+[0.568s] Invoking command in '/home/yusuf/mission_act_ws/src/mission_act': PYTHONPATH=/home/yusuf/mission_act_ws/build/mission_act/prefix_override:/home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/mission_act build --build-base /home/yusuf/mission_act_ws/build/mission_act/build install --record /home/yusuf/mission_act_ws/build/mission_act/install.log --single-version-externally-managed install_data
+[0.782s] running egg_info
+[0.783s] writing ../../build/mission_act/mission_act.egg-info/PKG-INFO
+[0.784s] writing dependency_links to ../../build/mission_act/mission_act.egg-info/dependency_links.txt
+[0.784s] writing entry points to ../../build/mission_act/mission_act.egg-info/entry_points.txt
+[0.784s] writing requirements to ../../build/mission_act/mission_act.egg-info/requires.txt
+[0.784s] writing top-level names to ../../build/mission_act/mission_act.egg-info/top_level.txt
+[0.786s] reading manifest file '../../build/mission_act/mission_act.egg-info/SOURCES.txt'
+[0.787s] writing manifest file '../../build/mission_act/mission_act.egg-info/SOURCES.txt'
+[0.788s] running build
+[0.788s] running build_py
+[0.788s] copying mission_act/act_mis.py -> /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act
+[0.788s] running install
+[0.788s] running install_lib
+[0.789s] copying /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act/act_mis.py -> /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act
+[0.789s] byte-compiling /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act/act_mis.py to act_mis.cpython-310.pyc
+[0.791s] running install_data
+[0.791s] running install_egg_info
+[0.793s] removing '/home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act-0.0.0-py3.10.egg-info' (and everything under it)
+[0.793s] Copying ../../build/mission_act/mission_act.egg-info to /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act-0.0.0-py3.10.egg-info
+[0.794s] running install_scripts
+[0.814s] Installing mission script to /home/yusuf/mission_act_ws/install/mission_act/lib/mission_act
+[0.814s] writing list of installed files to '/home/yusuf/mission_act_ws/build/mission_act/install.log'
+[0.839s] Invoked command in '/home/yusuf/mission_act_ws/src/mission_act' returned '0': PYTHONPATH=/home/yusuf/mission_act_ws/build/mission_act/prefix_override:/home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/mission_act build --build-base /home/yusuf/mission_act_ws/build/mission_act/build install --record /home/yusuf/mission_act_ws/build/mission_act/install.log --single-version-externally-managed install_data

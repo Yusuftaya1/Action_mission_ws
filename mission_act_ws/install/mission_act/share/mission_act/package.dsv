@@ -1,0 +1,6 @@
+source;share/mission_act/hook/pythonpath.ps1
+source;share/mission_act/hook/pythonpath.dsv
+source;share/mission_act/hook/pythonpath.sh
+source;share/mission_act/hook/ament_prefix_path.ps1
+source;share/mission_act/hook/ament_prefix_path.dsv
+source;share/mission_act/hook/ament_prefix_path.sh

@@ -1,0 +1,3 @@
+[console_scripts]
+mission = mission_act.act_mis:main
+

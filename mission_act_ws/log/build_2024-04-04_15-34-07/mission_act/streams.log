@@ -1,0 +1,40 @@
+[0.897s] Invoking command in '/home/yusuf/mission_act_ws/src/mission_act': PYTHONPATH=/home/yusuf/mission_act_ws/build/mission_act/prefix_override:/home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/mission_act build --build-base /home/yusuf/mission_act_ws/build/mission_act/build install --record /home/yusuf/mission_act_ws/build/mission_act/install.log --single-version-externally-managed install_data
+[1.205s] running egg_info
+[1.205s] creating ../../build/mission_act/mission_act.egg-info
+[1.206s] writing ../../build/mission_act/mission_act.egg-info/PKG-INFO
+[1.206s] writing dependency_links to ../../build/mission_act/mission_act.egg-info/dependency_links.txt
+[1.206s] writing entry points to ../../build/mission_act/mission_act.egg-info/entry_points.txt
+[1.206s] writing requirements to ../../build/mission_act/mission_act.egg-info/requires.txt
+[1.206s] writing top-level names to ../../build/mission_act/mission_act.egg-info/top_level.txt
+[1.206s] writing manifest file '../../build/mission_act/mission_act.egg-info/SOURCES.txt'
+[1.208s] reading manifest file '../../build/mission_act/mission_act.egg-info/SOURCES.txt'
+[1.209s] writing manifest file '../../build/mission_act/mission_act.egg-info/SOURCES.txt'
+[1.209s] running build
+[1.210s] running build_py
+[1.210s] creating /home/yusuf/mission_act_ws/build/mission_act/build
+[1.210s] creating /home/yusuf/mission_act_ws/build/mission_act/build/lib
+[1.210s] creating /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act
+[1.210s] copying mission_act/__init__.py -> /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act
+[1.210s] copying mission_act/act_mis.py -> /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act
+[1.210s] copying mission_act/AprilTagModule.py -> /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act
+[1.210s] running install
+[1.210s] running install_lib
+[1.211s] creating /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act
+[1.212s] copying /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act/__init__.py -> /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act
+[1.212s] copying /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act/act_mis.py -> /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act
+[1.212s] copying /home/yusuf/mission_act_ws/build/mission_act/build/lib/mission_act/AprilTagModule.py -> /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act
+[1.212s] byte-compiling /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act/__init__.py to __init__.cpython-310.pyc
+[1.213s] byte-compiling /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act/act_mis.py to act_mis.cpython-310.pyc
+[1.214s] byte-compiling /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act/AprilTagModule.py to AprilTagModule.cpython-310.pyc
+[1.218s] running install_data
+[1.219s] creating /home/yusuf/mission_act_ws/install/mission_act/share/ament_index
+[1.219s] creating /home/yusuf/mission_act_ws/install/mission_act/share/ament_index/resource_index
+[1.219s] creating /home/yusuf/mission_act_ws/install/mission_act/share/ament_index/resource_index/packages
+[1.219s] copying resource/mission_act -> /home/yusuf/mission_act_ws/install/mission_act/share/ament_index/resource_index/packages
+[1.219s] copying package.xml -> /home/yusuf/mission_act_ws/install/mission_act/share/mission_act
+[1.219s] running install_egg_info
+[1.222s] Copying ../../build/mission_act/mission_act.egg-info to /home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages/mission_act-0.0.0-py3.10.egg-info
+[1.223s] running install_scripts
+[1.251s] Installing mission script to /home/yusuf/mission_act_ws/install/mission_act/lib/mission_act
+[1.251s] writing list of installed files to '/home/yusuf/mission_act_ws/build/mission_act/install.log'
+[1.283s] Invoked command in '/home/yusuf/mission_act_ws/src/mission_act' returned '0': PYTHONPATH=/home/yusuf/mission_act_ws/build/mission_act/prefix_override:/home/yusuf/mission_act_ws/install/mission_act/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/mission_act build --build-base /home/yusuf/mission_act_ws/build/mission_act/build install --record /home/yusuf/mission_act_ws/build/mission_act/install.log --single-version-externally-managed install_data
