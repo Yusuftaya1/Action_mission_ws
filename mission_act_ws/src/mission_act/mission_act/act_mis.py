@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import rclpy
+import threading
 from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped
 from rclpy.action import ActionClient
@@ -13,7 +14,7 @@ from AprilTagModule import Detector
 import tf_transformations
 import time
 
-class InitialPose(Node):
+class Pose_Class(Node): #its mission class actualy
     def __init__(self):
         super().__init__('missions_node')
         self.publisher = self.create_publisher(
@@ -22,10 +23,6 @@ class InitialPose(Node):
             10
         )
         self.nav = BasicNavigator()
-        inital_pose= self.create_pose_stamped(0.0,0.0,0.0)
-        self.nav.setInitialPose(inital_pose)
-        self.get_logger().info("SET INITAL POSITION.")
-        time.sleep(4.0)
 
     def create_pose_stamped(self, pose_x, pose_y, orientation_z):
         q_x, q_y, q_z, q_w = tf_transformations.quaternion_from_euler(0.0, 0.0, orientation_z)
@@ -45,9 +42,14 @@ class InitialPose(Node):
         self.publisher.publish(pose)
 
     def mission0(self):
-        # goal_pose = self.create_pose_stamped(2.5, 0.0, 1.57)
+        # goal_pose = self.create_pose_stamped(2.5, 0.0, 0.0)
         # self.publish_goal_pose(goal_pose)
         self.get_logger().info("MISSION 0: Goal pose published")
+        time.sleep(5)
+        self.get_logger().info("TO Finished")
+
+    def mission_take_it(self):
+        self.get_logger().info("MISSION  take it Detected")
 
 
 class AprilTagDetector(Node):
@@ -58,13 +60,10 @@ class AprilTagDetector(Node):
             '/camera/image_raw',
             self.image_callback,
             10)
+        
         self.bridge = CvBridge()
         self.tag_detector = Detector()
-        self.pose_class =InitialPose()
-
-        self.detector_flag=False
-        #self.missions = Missions()
-        #self.pose_publish_FLAG = False
+        self.pose_class =Pose_Class()
 
     def image_callback(self, msg):
         cv_image = self.bridge.imgmsg_to_cv2(msg, "bgr8")
@@ -72,18 +71,21 @@ class AprilTagDetector(Node):
         detections = self.tag_detector.detect(gray)
 
         if not detections:
-            pass
-            #self.get_logger().info("EMPTY LIST")
+            self.get_logger().info("EMPTY LIST")
         else:
             for tag in detections:
                 tag_id = tag.tag_id
                 self.get_logger().info(str(tag_id))
                 self.get_logger().info('Image Callback')
 
-                if tag_id==1:
+                if tag_id==1: #Yük alma görev mek.
                     self.get_logger().info('Mission 0 Detected')
-                    self.pose_class.mission0()
-                    
+                    #threading.Thread(target=self.pose_class.mission0).start()
+
+                if tag_id == 0 : #yük bırakma mek.
+                    self.get_logger().info('Mission 1 Detected')
+                    self.try_flag = True
+                    threading.Thread(target=self.pose_class.mission0).start()
 
 class Navigate(Node):
     def __init__(self):
@@ -91,6 +93,7 @@ class Navigate(Node):
         self.nav_to_pose_client = ActionClient(self, NavigateToPose, 'navigate_to_pose')
         self.nav_to_pose_client.wait_for_server()
         self.tag_detect=AprilTagDetector()
+        self.moveToGoal(2.0, 2.0, 1.56)
 
     def moveToGoal(self,xGoal,yGoal,wGoal ):
         goal_msg = NavigateToPose.Goal()
@@ -109,7 +112,6 @@ class Navigate(Node):
         self._send_goal_future = self.nav_to_pose_client.send_goal_async(goal_msg)
         self._send_goal_future.add_done_callback(self.goal_response_callback)
 
-
     def goal_response_callback(self, future):
         goal_handle = future.result()
         if not goal_handle.accepted:
@@ -126,25 +128,27 @@ class Navigate(Node):
                 break
             elif status == GoalStatus.STATUS_EXECUTING:
                 self.get_logger().info('Robot Going To Goal!')
-                rclpy.spin_once(self.tag_detect)
-
+                ##AprilTag kontol 
+                rclpy.spin_once(self.tag_detect) 
             elif status == GoalStatus.STATUS_CANCELED:
                 self.get_logger().info('Goal canceled')
                 break
             elif status == GoalStatus.STATUS_ABORTED:
                 self.get_logger().info('Goal aborted')
                 break
-            
             rclpy.spin_once(self)
 
 
 def main(args=None):
     rclpy.init(args=args)
 
+    Pose_estimate=Pose_Class()
+    inital_pose= Pose_estimate.create_pose_stamped(0.0,0.0,0.0)
+    Pose_estimate.nav.setInitialPose(inital_pose)
+    Pose_estimate.get_logger().info("SET INITAL POSITION.")
+    time.sleep(4.0)
+
     navigate_to_pose = Navigate()
-
-    navigate_to_pose.moveToGoal(1.5, 0.0, 1.0)
-
     rclpy.spin(navigate_to_pose)
     
     rclpy.shutdown()
